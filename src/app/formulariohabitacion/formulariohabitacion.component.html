@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <h2>Registro de habitacion en el sistema</h2>
+            <hr>
+            <form [formGroup]="formulario">
+
+                <div class="mb-3">
+                    <label class="form-label">Nombre: </label>
+                    <input type="text" class="form-control" formControlName="nombre">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Foto: </label>
+                    <input type="text" class="form-control" formControlName="foto">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Descripcion: </label>
+                    <input type="text" class="form-control" formControlName="descripcion">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Precio noche: </label>
+                    <input type="number" class="form-control" formControlName="precioNoche">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Cantidad Maxima: </label>
+                    <input type="number" class="form-control" formControlName="cantidadmaxima">
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Registrar</button>
+
+            </form>
+        </div>
+        <div class="col-12 col-md-4 align-self-center">
+            <img src="../../assets/img/familia.png" alt="" class="img-fluid w-100">
+        </div>
+    </div>
+</div>
