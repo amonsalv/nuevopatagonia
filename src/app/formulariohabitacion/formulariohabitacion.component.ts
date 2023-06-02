@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup, FormBuilder} from '@angular/forms'
+import { HabitacionService } from '../services/habitacion.service';
 
 @Component({
   selector: 'app-formulariohabitacion',
@@ -11,7 +12,7 @@ export class FormulariohabitacionComponent {
   public formulario:FormGroup
   public datosFormulario:any[]=[]
 
-  public constructor(public constructorFormulario:FormBuilder){
+  public constructor(public constructorFormulario:FormBuilder,public servicio:HabitacionService){
     this.formulario=this.inicializarFormulario()
   }
 
@@ -24,5 +25,17 @@ export class FormulariohabitacionComponent {
       cantidadmaxima:['']
     })
   }
+
+  public procesarDatos():void{
+
+    let datos=this.formulario.value
+    
+    this.servicio.registrarHabitacion(datos)
+    .subscribe((respuesta)=>{
+      console.log(respuesta)
+    })
+
+  }
+
 
 }

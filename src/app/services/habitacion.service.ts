@@ -12,9 +12,14 @@ export class HabitacionService {
 
   constructor(public servicioHabitacion:HttpClient) { }
 
-  buscarHabitaciones():Observable<any>{
+  public buscarHabitaciones():Observable<any>{
     let urlServicio:string=this.url+"buscarhabitaciones"
     return this.servicioHabitacion.get(urlServicio)
+  }
+
+  public registrarHabitacion(datos:any):Observable<any>{
+    let urlServicio:string=this.url+"registrarhabitacion"
+    return this.servicioHabitacion.post(urlServicio,datos)
   
   }
 
